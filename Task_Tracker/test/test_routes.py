@@ -44,7 +44,8 @@ def test_get_tasks(client):
 
     assert response.status_code == 200
     assert len(data) == 1
-    assert data[0]["]()
+    assert data[0]["title"] == "Task 1"
+
 
 
 
