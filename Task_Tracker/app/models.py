@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from . import db
 
 
@@ -6,4 +8,8 @@ class Task(db.Model):
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(255))
     done = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<Task {self.title}>"
 
